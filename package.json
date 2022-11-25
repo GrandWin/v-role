@@ -6,6 +6,20 @@
   "module": "./dist/v-role.js",
   "types": "./dist/v-role.d.ts",
   "license": "MIT",
+  "author": "Nikita Vologzhin <mrgrandwinnow@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrandWin/v-mask.git"
+  },
+  "keywords": [
+    "vue.js",
+    "vue",
+    "v-role"
+  ],
+  "bugs": {
+    "url": "https://github.com/GrandWin/v-role/issues"
+  },
+  "homepage": "https://github.com/GrandWin/v-role#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
