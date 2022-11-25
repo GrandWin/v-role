@@ -1,6 +1,6 @@
 {
   "name": "v-role",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./dist/v-role.umd.cjs",
   "module": "./dist/v-role.js",
@@ -33,7 +33,7 @@
         "types": "./dist/v-role.d.ts",
         "default": "./dist/v-role.js"
       },
-      "require":{
+      "require": {
         "types": "./dist/v-role.d.ts",
         "default": "./dist/v-role.umd.cjs"
       }
