@@ -21,7 +21,7 @@ export type RoleNode = VNode<
   }
 >;
 
-interface VRoleOptions {
+export interface VRoleOptions {
   superRole?: string;
   globalComponent?: boolean;
 }
