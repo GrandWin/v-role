@@ -133,3 +133,7 @@ jest.config.js
 renovate.json
 build/
 .editorconfig
+src/
+.vscode
+.eslintrc.cjs
+vite.config.ts
