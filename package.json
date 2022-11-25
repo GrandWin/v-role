@@ -4,6 +4,7 @@
   "type": "module",
   "main": "./dist/v-role.umd.cjs",
   "module": "./dist/v-role.js",
+  "types": "./dist/v-role.d.ts",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
