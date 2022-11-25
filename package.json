@@ -9,7 +9,7 @@
   "author": "Nikita Vologzhin <mrgrandwinnow@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GrandWin/v-mask.git"
+    "url": "git+https://github.com/GrandWin/v-role.git"
   },
   "keywords": [
     "vue.js",
