@@ -29,8 +29,14 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/v-role.js",
-      "require": "./dist/v-role.umd.cjs"
+      "import": {
+        "types": "./dist/v-role.d.ts",
+        "default": "./dist/v-role.js"
+      },
+      "require":{
+        "types": "./dist/v-role.d.ts",
+        "default": "./dist/v-role.umd.cjs"
+      }
     }
   }
 }
