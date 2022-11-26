@@ -16,8 +16,8 @@ const {
 type Roles = "" | "any" | "all" | "unless";
 const props = withDefaults(
   defineProps<{
-    roles?: string | string[];
-    permissions?: string | string[];
+    role?: string | string[];
+    permission?: string | string[];
     type?: Roles;
     typeRoles?: Roles;
     typePermissions?: Roles;
