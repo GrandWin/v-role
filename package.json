@@ -43,6 +43,9 @@
     "vue-eslint-parser": "^9.1.0",
     "vue-tsc": "^1.0.9"
   },
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": {
