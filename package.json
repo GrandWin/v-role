@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/GrandWin/v-role/issues"
   },
-  "homepage": "https://github.com/GrandWin/v-role#readme",
+  "homepage": "https://grandwin.github.io/v-role",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
