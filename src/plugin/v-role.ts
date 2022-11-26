@@ -26,12 +26,22 @@ export interface VRoleOptions {
   globalComponent?: boolean;
 }
 
+declare module "vue" {
+  interface ComponentCustomProperties {
+    $role: ReturnType<typeof useRole>;
+  }
+}
+
 const VRolePlugin: Plugin = {
   install(app, options?: VRoleOptions) {
     const { setSuperRole } = useRole();
 
     app.directive("role", VRoleDirective);
     app.directive("permission", VPermissionDirective);
+
+    app.config.globalProperties.$role = {
+      ...useRole(),
+    };
 
     if (!options) {
       return;
