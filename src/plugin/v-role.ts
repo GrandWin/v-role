@@ -26,15 +26,6 @@ export interface VRoleOptions {
   globalComponent?: boolean;
 }
 
-declare module "vue" {
-  export interface ComponentCustomProperties {
-    $role: ReturnType<typeof useRole>;
-  }
-  export interface GlobalComponents {
-    VRole: typeof VRole;
-  }
-}
-
 const VRolePlugin: Plugin = {
   install(app, options?: VRoleOptions) {
     const { setSuperRole } = useRole();

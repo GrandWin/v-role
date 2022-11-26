@@ -6,3 +6,4 @@ export { VPermissionDirective } from "./directives/v-permission";
 export { VRolePlugin } from "./plugin/v-role";
 
 export { default as VRole } from "./components/VRole.vue";
+export * from "./shims.d";
