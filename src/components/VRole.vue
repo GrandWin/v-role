@@ -13,14 +13,14 @@ const {
   validatePermissions,
 } = useRole();
 
-type Roles = "" | "any" | "all" | "unless";
+type Args = "" | "any" | "all" | "unless";
 const props = withDefaults(
   defineProps<{
     role?: string | string[];
     permission?: string | string[];
-    type?: Roles;
-    typeRoles?: Roles;
-    typePermissions?: Roles;
+    type?: Args;
+    typeRoles?: Args;
+    typePermissions?: Args;
   }>(),
   {
     roles: "",
