@@ -16,7 +16,7 @@ v-role allows you to change roles and permissions, set a super role, check for r
 - Usage with composable or global property
 - First class Typescript support
 
-## Docs
+## 💡 Docs
 
 See [docs](https://grandwin.github.io/v-role/) for details and examples.
 
