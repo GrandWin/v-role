@@ -27,7 +27,7 @@ export interface VRoleOptions {
 }
 
 declare module "vue" {
-  interface ComponentCustomProperties {
+  export interface ComponentCustomProperties {
     $role: ReturnType<typeof useRole>;
   }
   export interface GlobalComponents {
