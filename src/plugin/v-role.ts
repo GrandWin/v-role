@@ -30,6 +30,9 @@ declare module "vue" {
   interface ComponentCustomProperties {
     $role: ReturnType<typeof useRole>;
   }
+  export interface GlobalComponents {
+    VRole: typeof VRole;
+  }
 }
 
 const VRolePlugin: Plugin = {
