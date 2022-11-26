@@ -17,32 +17,32 @@ type Args = "" | "any" | "all" | "unless";
 const props = withDefaults(
   defineProps<{
     role?: string | string[];
+    roleArg?: Args;
     permission?: string | string[];
-    type?: Args;
-    typeRoles?: Args;
-    typePermissions?: Args;
+    permissionArg?: Args;
+    arg?: Args;
   }>(),
   {
-    roles: "",
-    permissions: "",
-    type: "",
-    typeRoles: "",
-    typePermissions: "",
+    role: "",
+    roleArg: "",
+    permission: "",
+    permissionArg: "",
+    arg: "",
   }
 );
 
 const rolesState = computed(() => {
-  const type = props.typeRoles || props.type;
-  validateRoles(props.roles, type);
+  const arg = props.roleArg || props.arg;
+  validateRoles(props.role, arg);
 
-  return getRolesState(props.roles, type);
+  return getRolesState(props.role, arg);
 });
 
 const permissionsState = computed(() => {
-  const type = props.typePermissions || props.type;
-  validatePermissions(props.permissions, type);
+  const arg = props.permissionArg || props.arg;
+  validatePermissions(props.permission, arg);
 
-  return getPermissionsState(props.permissions, type);
+  return getPermissionsState(props.permission, arg);
 });
 
 const isVisible = computed(() => {
