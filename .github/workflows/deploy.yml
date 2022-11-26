@@ -19,6 +19,10 @@ jobs:
 
       - name: Install pnpm
         run: npm i -g pnpm
+
+      - name: Install dependencies
+        run: pnpm i
+
       - name: Build
         run: pnpm docs:build
 
