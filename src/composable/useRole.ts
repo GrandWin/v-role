@@ -65,7 +65,7 @@ export function useRole() {
       : hasAnyPermission(permissions);
   }
 
-  function getRolesState(value: string | string[], arg: string | undefined) {
+  function getRolesState(value: string | string[], arg?: string) {
     if (isString(value)) {
       if (arg === "unless") {
         return unlessRole(value);
@@ -91,10 +91,7 @@ export function useRole() {
     return false;
   }
 
-  function getPermissionsState(
-    value: string | string[],
-    arg: string | undefined
-  ) {
+  function getPermissionsState(value: string | string[], arg?: string) {
     if (isString(value)) {
       if (arg === "unless") {
         return unlessPermission(value);
@@ -120,7 +117,7 @@ export function useRole() {
     return false;
   }
 
-  function validateRoles(value: unknown, arg: string | undefined) {
+  function validateRoles(value: unknown, arg?: string | undefined) {
     if (arg) {
       if (!args.all.includes(arg)) {
         throw new Error(`unexpected directive argument: ${arg}`);
@@ -158,7 +155,7 @@ export function useRole() {
     }
   }
 
-  function validatePermissions(value: unknown, arg: string | undefined) {
+  function validatePermissions(value: unknown, arg?: string) {
     if (arg) {
       if (!args.all.includes(arg)) {
         throw new Error(`unexpected directive argument: ${arg}`);
