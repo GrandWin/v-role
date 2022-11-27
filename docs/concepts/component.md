@@ -70,7 +70,7 @@ defineProps<{
   role?: string | string[];
   roleArg?: Args;
   permission?: string | string[];
-  rolePermission?: Args;
+  permissionArg?: Args;
   arg?: Args;
 }>();
 ```

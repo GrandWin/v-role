@@ -2,12 +2,22 @@
 
 Install v-role with your favorite package manager:
 
+Via [pnpm](https://pnpm.io/):
+
 ```sh
-pnpm add v-role
-# or with yarn
+pnpm i v-role
+```
+
+Via [yarn](https://yarnpkg.com/):
+
+```
 yarn add v-role
-# or with npm
-npm install v-role
+```
+
+Via [npm](https://www.npmjs.com/):
+
+```
+npm i v-role
 ```
 
 :::tip

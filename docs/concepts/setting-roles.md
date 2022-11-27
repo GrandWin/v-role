@@ -1,10 +1,10 @@
 # Setting Roles
 
-This should be the first step. When you log in or start the application, you must set the roles and permissions.
+It should be the first step. When you log in or start the application — you must set the roles and permissions.
 
 ## Composable
 
-You can import `useRole` composable and setting roles and permissions by methods:
+You can import `useRole` composable to setting roles and permissions by methods:
 
 ```ts
 import { useRole } from "v-role";
@@ -14,7 +14,7 @@ setRoles(["admin", "moderator"]);
 setPermissions(["can-write", "can-edit"]);
 ```
 
-With composable you can do it in components, pinia / vuex stores and navigation guards.
+With composable you can do it in components, pinia / vuex stores / navigation guards and etc.
 
 ## Global Property
 
