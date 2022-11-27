@@ -5,7 +5,7 @@ const args = {
   string: ["unless"],
   array: ["any", "all", "unless"],
   get all() {
-    return [...this.string, ...this.array];
+    return [...new Set([...this.string, ...this.array])];
   },
 };
 
