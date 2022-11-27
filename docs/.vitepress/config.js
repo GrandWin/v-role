@@ -1,9 +1,16 @@
 export default {
-  title: "V-Role Plugin",
+  title: "V-Role",
   description: "Simple, reactive, and convient Vue role manager.",
   lang: "en-US",
   base: "/v-role/",
+
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+    ["link", { rel: "icon", type: "image/png", href: "/logo.png" }],
+  ],
+
   themeConfig: {
+    logo: "/logo.svg",
     nav: [
       { text: "Guide", link: "/introduction/" },
       { text: "API", link: "/concepts/api" },
