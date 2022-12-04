@@ -1,183 +1,175 @@
 # API
 
-All API of v-role
+All API of the plugin. All examples actual for options API.
 
-## Get ref of roles:
+## roles
 
-```ts
-const { roles } = useRole();
-this.$role.roles;
+Get reactive state of current roles:
 
-type roles = Ref<string[]>;
-```
+- Type: `Ref<string[]>`
+- Example:
+  ```ts
+  const { roles } = useRole();
+  ```
 
-## Get ref of permissions:
+## permissions
 
-```ts
-const { permissions } = useRole();
-this.$role.permissions;
+Get reactive state of current permissions:
 
-type permissions = Ref<string[]>;
-```
+- Type: `Ref<string[]>`
+- Example
+  ```ts
+  const { permissions } = useRole();
+  ```
 
-## Is super user:
+## isSuperUser
 
-```ts
-const { isSuperUser } = useRole();
-this.$role.isSuperUser;
+Get the state of whether the current user is a super user:
 
-type isSuperUser = ComputedRef<boolean>;
-```
+- Type: `ComputedRef<boolean>`
+- Example:
+  ```ts
+  const { isSuperUser } = useRole();
+  ```
 
-## Set roles:
+## setRoles()
 
-```ts
-const { setRoles } = useRole();
-setRoles(["admin"]);
-this.$role.setRoles(["admin"]);
+- Type: `(roles: string[]) => void`
+- Example:
+  ```ts
+  const { setRoles } = useRole();
+  setRoles(["admin"]);
+  ```
 
-type setRoles = (roles: string[]) => void;
-```
+## setPermissions()
 
-## Set permissions:
+- Type: `(permissions: string[]) => void`
+- Example:
+  ```ts
+  const { setPermissions } = useRole();
+  setPermissions(["can-edit"]);
+  ```
 
-```ts
-const { setPermissions } = useRole();
-setPermissions(["can-edit"]);
-this.$role.setPermissions(["can-edit"]);
+## hasRole()
 
-type setPermissions = (permissions: string[]) => void;
-```
+- Type: `(role: string) => boolean`
+- Example:
+  ```ts
+  const { hasRole } = useRole();
+  hasRole("admin");
+  ```
 
-## Check has role:
+## hasAnyRole()
 
-```ts
-const { hasRole } = useRole();
-hasRole("admin");
-this.$role.hasRole("admin");
+- Type: `(roles: string[]) => boolean`
+- Example:
+  ```ts
+  const { hasAnyRole } = useRole();
+  hasAnyRole(["admin", "moderator"]);
+  ```
 
-type hasRole = (role: string) => boolean;
-```
+## hasAllRoles()
 
-## Check has any role:
+- Type: `(roles: string[]) => boolean`
+- Example:
+  ```ts
+  const { hasAllRoles } = useRole();
+  hasAllRoles(["admin", "moderator"]);
+  ```
 
-```ts
-const { hasAnyRole } = useRole();
-hasAnyRole(["admin", "moderator"]);
-this.$role.hasAnyRole(["admin", "moderator"]);
+## hasPermission()
 
-type hasAnyRole = (roles: string[]) => boolean;
-```
+- Type: `(permission: string) => boolean`
+- Example:
+  ```ts
+  const { hasPermission } = useRole();
+  hasPermission("admin");
+  ```
 
-## Check has all roles:
+## hasAnyPermission()
 
-```ts
-const { hasAllRoles } = useRole();
-hasAllRoles(["admin", "moderator"]);
-this.$role.hasAllRoles(["admin", "moderator"]);
+- Type: `(permissions: string[]) => boolean`
+- Example:
+  ```ts
+  const { hasAnyPermission } = useRole();
+  hasAnyPermission(["admin", "moderator"]);
+  ```
 
-type hasAllRoles = (roles: string[]) => boolean;
-```
+## hasAllPermissions()
 
-## Check has permission:
+- Type: `(permissions: string[]) => boolean`
+- Example:
+  ```ts
+  const { hasAllPermissions } = useRole();
+  hasAllPermissions(["admin", "moderator"]);
+  ```
 
-```ts
-const { hasPermission } = useRole();
-hasPermission("admin");
-this.$role.hasPermission("admin");
+## unlessRole()
 
-type hasPermission = (permission: string) => boolean;
-```
+- Type: `(roles: string | string[]) => boolean`
+- Example:
+  ```ts
+  const { unlessRole } = useRole();
+  unlessRole("admin");
+  unlessRole(["admin", "moderator"]);
+  ```
 
-## Check has any permission:
+## unlessPermission()
 
-```ts
-const { hasAnyPermission } = useRole();
-hasAnyPermission(["admin", "moderator"]);
-this.$role.hasAnyPermission(["admin", "moderator"]);
+- Type: `(permissions: string | string[]) => boolean`
+- Example:
+  ```ts
+  const { unlessPermission } = useRole();
+  unlessPermission("can-edit");
+  ```
 
-type hasAnyPermission = (permissions: string[]) => boolean;
-```
+## getRolesState()
 
-## Check has all permissions:
+- Type: `(value: string | string[], arg?: string) => boolean`
+- Example:
+  ```ts
+  const { getRolesState } = useRole();
+  getRolesState("admin", "unless");
+  ```
 
-```ts
-const { hasAllPermissions } = useRole();
-hasAllPermissions(["admin", "moderator"]);
-this.$role.hasAllPermissions(["admin", "moderator"]);
+## getPermissionsState()
 
-type hasAllPermissions = (permissions: string[]) => boolean;
-```
+- Type: `(value: string | string[], arg?: string) => boolean`
+- Example:
+  ```ts
+  const { getPermissionsState } = useRole();
+  getPermissionsState("can-edit", "unless");
+  ```
 
-## Check unless role:
+## validateRoles()
 
-```ts
-const { unlessRole } = useRole();
-unlessRole("admin");
-this.$role.unlessRole("admin");
+- Type: `(value: unknown, arg?: string) => void`
+- Example:
+  ```ts
+  const { validateRoles } = useRole();
+  validateRoles("admin", "unless");
+  ```
 
-type unlessRole = (roles: string | string[]) => boolean;
-```
+## validatePermissions()
 
-## Check unless permission:
+- Type: `(value: unknown, arg?: string) => void`
+- Example:
+  ```ts
+  const { validatePermissions } = useRole();
+  validatePermissions("can-edit", "unless");
+  ```
 
-```ts
-const { unlessPermission } = useRole();
-unlessPermission("can-edit");
-this.$role.unlessPermission("can-edit");
+## args
 
-type unlessPermission = (permissions: string | string[]) => boolean;
-```
-
-## Get roles state:
-
-```ts
-const { getRolesState } = useRole();
-getRolesState("admin", "unless");
-this.$role.getRolesState("admin", "unless");
-
-type getRolesState = (value: string | string[], arg?: string) => boolean;
-```
-
-## Get permissions state:
-
-```ts
-const { getPermissionsState } = useRole();
-getPermissionsState("can-edit", "unless");
-this.$role.getPermissionsState("can-edit", "unless");
-
-type getPermissionsState = (value: string | string[], arg?: string) => boolean;
-```
-
-## Validate roles:
-
-```ts
-const { validateRoles } = useRole();
-validateRoles("admin", "unless");
-this.$role.validateRoles("admin", "unless");
-
-type validateRoles = (value: unknown, arg?: string) => void;
-```
-
-## Validate permissions:
-
-```ts
-const { validatePermissions } = useRole();
-validatePermissions("can-edit", "unless");
-this.$role.validatePermissions("can-edit", "unless");
-
-type validatePermissions = (value: unknown, arg?: string) => void;
-```
-
-## Arguments
-
-```ts
-const { args } = useRole();
-this.$role.args;
-
-interface args {
-  string: string[];
-  array: string[];
-  readonly all: string[];
-}
-```
+- Type:
+  ```ts
+  interface args {
+    string: string[];
+    array: string[];
+    readonly all: string[];
+  }
+  ```
+- Example:
+  ```ts
+  const { args } = useRole();
+  ```
