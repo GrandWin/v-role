@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from "vitepress";
+
+export default defineConfig({
   title: "V-Role",
   description: "Simple, reactive, and convient Vue role manager.",
   lang: "en-US",
@@ -30,6 +32,7 @@ export default {
           { text: "Setting Roles", link: "/concepts/setting-roles" },
           { text: "Directives", link: "/concepts/directives" },
           { text: "Component", link: "/concepts/component" },
+          { text: "Navigation guards", link: "/concepts/navigation-guards" },
           { text: "API", link: "/concepts/api" },
         ],
       },
@@ -39,4 +42,4 @@ export default {
         '<a href="https://github.com/GrandWin/v-role/blob/main/LICENCE">MIT Licensed</a> | Copyright © 2022 <a href="https://github.com/GrandWin">Nikita Vologzhin</a>',
     },
   },
-};
+});
