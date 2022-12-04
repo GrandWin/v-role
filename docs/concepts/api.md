@@ -32,6 +32,42 @@ Get the state of whether the current user is a super user:
   const { isSuperUser } = useRole();
   ```
 
+## addRoles()
+
+- Type: `(roles: string | string[]) => void`
+- Example:
+  ```ts
+  const { addRoles } = useRole();
+  addRoles("admin");
+  ```
+
+## addPermissions()
+
+- Type: `(permissions: string | string[]) => void`
+- Example:
+  ```ts
+  const { addPermissions } = useRole();
+  addPermissions("can-edit");
+  ```
+
+## removeRoles()
+
+- Type: `(roles: string | string[]) => void`
+- Example:
+  ```ts
+  const { removeRoles } = useRole();
+  removeRoles("admin");
+  ```
+
+## removePermissions()
+
+- Type: `(permissions: string | string[]) => void`
+- Example:
+  ```ts
+  const { removePermissions } = useRole();
+  removePermissions("can-edit");
+  ```
+
 ## setRoles()
 
 - Type: `(roles: string[]) => void`

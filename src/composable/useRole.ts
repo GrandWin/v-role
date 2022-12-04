@@ -13,6 +13,40 @@ const superRole = ref<string | null>(null);
 const _roles = ref<string[]>([]);
 const _permissions = ref<string[]>([]);
 export function useRole() {
+  function addRoles(roles: string | string[]) {
+    if (isString(roles)) {
+      _roles.value.push(roles);
+    } else {
+      roles.forEach((role) => addRoles(role));
+    }
+  }
+
+  function addPermissions(permissions: string | string[]) {
+    if (isString(permissions)) {
+      _permissions.value.push(permissions);
+    } else {
+      permissions.forEach((permission) => addPermissions(permission));
+    }
+  }
+
+  function removeRoles(roles: string | string[]) {
+    if (isString(roles)) {
+      _roles.value = _roles.value.filter((role) => roles !== role);
+    } else {
+      roles.forEach((role) => removeRoles(role));
+    }
+  }
+
+  function removePermissions(permissions: string | string[]) {
+    if (isString(permissions)) {
+      _permissions.value = _permissions.value.filter(
+        (permission) => permissions !== permission
+      );
+    } else {
+      permissions.forEach((permission) => removePermissions(permission));
+    }
+  }
+
   function setRoles(roles: string[]) {
     _roles.value = roles;
   }
@@ -197,6 +231,10 @@ export function useRole() {
     roles: _roles,
     permissions: _permissions,
     isSuperUser,
+    addRoles,
+    addPermissions,
+    removeRoles,
+    removePermissions,
     setRoles,
     setPermissions,
     setSuperRole,
