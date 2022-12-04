@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: VRole
+  name: v-role
   text: Vue role manager.
   tagline: Simple, reactive, and convient.
   actions:
