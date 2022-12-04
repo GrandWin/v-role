@@ -1,6 +1,6 @@
 {
   "name": "v-role",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "type": "module",
   "main": "./dist/v-role.umd.cjs",
   "module": "./dist/v-role.js",
