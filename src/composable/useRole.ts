@@ -90,13 +90,13 @@ export function useRole() {
   }
 
   function unlessRole(roles: string | string[]) {
-    return isString(roles) ? !hasRole(roles) : !hasAnyRole(roles);
+    return isSuperUser.value || (isString(roles) ? !hasRole(roles) : !hasAnyRole(roles));
   }
 
   function unlessPermission(permissions: string | string[]) {
-    return isString(permissions)
+    return isSuperUser.value || (isString(permissions)
       ? !hasPermission(permissions)
-      : hasAnyPermission(permissions);
+      : hasAnyPermission(permissions));
   }
 
   function getRolesState(value: string | string[], arg?: string) {
